@@ -1,9 +1,16 @@
-import DashboardCard from "./components/Dashboard/DashboardCard"
-import Completed from "./components/Dashboard/Completed"
-import Achieved from "./components/Dashboard/Achieved"
-import Progress from "./components/Dashboard/Progress"
-import Status from "./components/Dashboard/Status"
+import DashboardCard from "../components/Dashboard/DashboardCard"
+import Completed from "../components/Dashboard/Completed"
+import Achieved from "../components/Dashboard/Achieved"
+import Progress from "../components/Dashboard/Progress"
+import Status from "../components/Dashboard/Status"
 import { HandRaisedIcon } from "@heroicons/react/24/solid"
+import ChartWrapper from "../components/ChartWrapper"
+import { fetchProgress } from "../_services/fetchProgress"
+import ProgressChart from "../components/Dashboard/ProgressChart"
+import { fetchStatus } from "../_services/fetchStatus"
+import StatusChart from "../components/Dashboard/StatusChart"
+
+
 
 const page = () => {
   return (
@@ -25,12 +32,20 @@ const page = () => {
         </div>
         <div className="col-span-3 row-span-2">
           <DashboardCard >
-          <Progress/>
+            <ChartWrapper
+              fetchFunction={fetchProgress}
+              title="Progress Over Time"
+              ChartComponent={ProgressChart}
+            />
           </DashboardCard>
         </div>
         <div className="col-span-2">
           <DashboardCard>
-            <Status />
+            <ChartWrapper
+              fetchFunction={fetchStatus}
+              title="Completed Vs Pending"
+              ChartComponent={StatusChart}
+            />
           </DashboardCard>
         </div>
         <div className="col-span-5">

@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css"; // Ensure this file includes Tailwind imports
-import Navigation from "./components/Navigation";
-import ClientProvider from "./ClientProvider";
-import { useSelector } from "react-redux";
-import { RootState } from "./store";
 import "@theme-toggles/react/css/Classic.css"
 
 
@@ -35,9 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} min-h-screen ${geistMono.variable} antialiased `}
       >
-        <ClientProvider>
-            {children}
-        </ClientProvider>
+            {children} 
       </body>
     </html>
   );

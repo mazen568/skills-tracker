@@ -1,4 +1,4 @@
-import { fetchSkill } from '@/app/services/fetchSkill';
+import { fetchSkill } from '@/app/_services/fetchSkill';
 import React from 'react'
 
 export default async function Page({ params }: { params: Promise<{skillId:number}> }) {

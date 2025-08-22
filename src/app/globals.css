@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
 @theme {
   --color-red-50: oklch(0.971 0.013 17.38);
   --color-red-100: oklch(0.936 0.032 17.717);
@@ -244,7 +246,14 @@
   --color-stone-950: oklch(0.147 0.004 49.25);
   --color-black: #000;
   --color-white: #fff;
-  --color-midnight: #0E1014 ;
-  --color-darkgray: #393B3B ;
-  --color-greenish:#507D72
+  --color-midnight: #0e1014;
+  --color-darkgray: #393b3b;
+  --color-greenish: #507d72;
+}
+
+
+
+
+.progress-chart svg:focus {
+  outline: none !important;
 }
